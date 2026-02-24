@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para Emilly 💕</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4e8a, #ff9ecb);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+button {
+    background: white;
+    color: #ff4e8a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ffe0ec;
+}
+
+#mensagem {
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.heart {
+    position: absolute;
+    color: white;
+    animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Emilly 💕</h1>
+    <p>Esse site é só pra você, minha princesa.</p>
+    <button onclick="mostrarMensagem()">Clique aqui 💖</button>
+    <p id="mensagem"></p>
+</div>
+
+<script>
+function mostrarMensagem() {
+    document.getElementById("mensagem").innerHTML =
+    "Eu te amo mt minha princesa, sou completamente apaixonado por vc ❤️✨";
+}
+
+function criarCoracao() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(criarCoracao, 300);
+</script>
+
+</body>
+</html>
